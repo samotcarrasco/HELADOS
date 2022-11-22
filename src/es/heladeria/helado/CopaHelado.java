@@ -8,35 +8,35 @@ import com.github.extras.Extra;
 public class CopaHelado  implements Precieable, Descriptible, Comparable<CopaHelado> {
 
 	final static int MAX_COMPLEMENTOS = 3;
-	static Ingrediente c0 = new IngredienteBase("Chocolate");
-	static Ingrediente c1 = new Complemento("Virutas de chocolate", 0.5f);
-	static Ingrediente c2 = new Complemento("Galletitas", 0.8f);
+	static IngredienteInterfaz c0 = new IngredienteBase("Chocolate");
+	static IngredienteInterfaz c1 = new Complemento("Virutas de chocolate", 0.5f);
+	static IngredienteInterfaz c2 = new Complemento("Galletitas", 0.8f);
 	// static Ingrediente c3 = (Ingrediente)
 	// ComplementoExtra.EXTRAS[0];
-	static Ingrediente c3 = new Complemento(ComplementoExtra.EXTRAS[0].getDescription(),
+	static IngredienteInterfaz c3 = new Complemento(ComplementoExtra.EXTRAS[0].getDescription(),
 			ComplementoExtra.EXTRAS[0].getPrice());
-	static Ingrediente c4 = new Complemento(ComplementoExtra.EXTRAS[1].getDescription(),
+	static IngredienteInterfaz c4 = new Complemento(ComplementoExtra.EXTRAS[1].getDescription(),
 			ComplementoExtra.EXTRAS[1].getPrice());
-	static Ingrediente c5 = new Complemento(ComplementoExtra.EXTRAS[2].getDescription(),
+	static IngredienteInterfaz c5 = new Complemento(ComplementoExtra.EXTRAS[2].getDescription(),
 			ComplementoExtra.EXTRAS[2].getPrice());
-	static Ingrediente c6 = new Complemento(ComplementoExtra.EXTRAS[3].getDescription(),
+	static IngredienteInterfaz c6 = new Complemento(ComplementoExtra.EXTRAS[3].getDescription(),
 			ComplementoExtra.EXTRAS[3].getPrice());
-	static Ingrediente c7 = new Complemento(ComplementoExtra.EXTRAS[4].getDescription(),
+	static IngredienteInterfaz c7 = new Complemento(ComplementoExtra.EXTRAS[4].getDescription(),
 			ComplementoExtra.EXTRAS[4].getPrice());
-	static Ingrediente c8 = new Complemento(ComplementoExtra.EXTRAS[5].getDescription(),
+	static IngredienteInterfaz c8 = new Complemento(ComplementoExtra.EXTRAS[5].getDescription(),
 			ComplementoExtra.EXTRAS[5].getPrice());
 
 
-	public final static Ingrediente[] CONSTANTE_COMPLEMENTOS = {c1, c2, c3, c4, c5, c6, c7, c8 };
+	public final static IngredienteInterfaz[] CONSTANTE_COMPLEMENTOS = {c1, c2, c3, c4, c5, c6, c7, c8 };
     
 	public IngredienteBase ingredienteBase;
-	public Ingrediente[] complementos = new Ingrediente[MAX_COMPLEMENTOS];
+	public IngredienteInterfaz[] complementos = new Ingrediente[MAX_COMPLEMENTOS];
 
 	public IngredienteBase getIngredienteBase() {
 		return ingredienteBase;
 	}
 
-	public Ingrediente[] getComplementos() {
+	public IngredienteInterfaz[] getComplementos() {
 		return complementos;
 	}
 
@@ -58,11 +58,12 @@ public class CopaHelado  implements Precieable, Descriptible, Comparable<CopaHel
 	}
 
 	
-	public boolean addComplemento(Ingrediente complemento) {
+	public boolean addComplemento(IngredienteInterfaz complemento) {
 		boolean isAnadido = false;
 		for (int i = 0; i < MAX_COMPLEMENTOS; i++) {
 			if (getComplementos()[i] == null && isAnadido == false) {
-				getComplementos()[i] = complemento;
+				//System.out.println("----------" + complemento.getDescripcion());
+				this.complementos[i] = complemento;
 				System.out.println("Añadido " + complemento.getDescripcion());
 				isAnadido = true;
 			}

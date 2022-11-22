@@ -49,17 +49,23 @@ public class App {
 		IngredienteBase base3 = new IngredienteBase("Nata");
 		CopaHelado helado3 = new CopaHelado(base3);
 		
+		IngredienteInterfaz comple = new IngredienteBase("Chocolate");
+		IngredienteInterfaz comple2 = new Complemento("Chocolate",4);
 		
-		//public IngredienteInterfaz[] complementos = new IngredienteInterfaz[MAX_COMPLEMENTOS];
+		//System.out.println("compleeeeeee2 " + comple2.getDescripcion());
+		IngredienteInterfaz[] komp = new Ingrediente[2];
+		komp[0] = comple;
+		komp[1] = comple2;
+//		helado2.complementos[0] = comple;
+//		helado2.complementos[1] = comple;
 		
+		System.out.println("asdfasdfsdf"  +komp[0].getDescripcion());
+		System.out.println("asdfasdfsdf"  +komp[1].getDescripcion());
+//		
 		
-		
-		Ingrediente comple = new IngredienteBase("Chocolate");
-		Ingrediente comple2 = new Complemento("Chocolate",4);
 		System.out.println(comple);		
-		//helado3.complementos[0]=comple2;
-		//helado3.addComplemento(comple);
-		System.out.println(helado3.toString());
+		helado3.addComplemento(comple);
+		//System.out.println(helado3.toString());
 
 		System.out.println("-------------------------------------------------");
 
@@ -96,7 +102,7 @@ public class App {
 
 		imprimirCuenta(listaHelados);
 		
-		List<Ingrediente> listaComplementos = new ArrayList<>();
+		List<IngredienteInterfaz> listaComplementos = new ArrayList<>();
 		listaComplementos.add(comple);
 		listaComplementos.add(comple2);
 
