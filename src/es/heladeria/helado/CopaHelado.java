@@ -44,7 +44,7 @@ public class CopaHelado  implements Precieable, Descriptible, Comparable<CopaHel
 		this.ingredienteBase = ingredienteBase;
 	}
 
-	protected void setComplemento(Complemento[] complementos) {
+	protected void setComplemento(IngredienteInterfaz[] complementos) {
 		this.complementos = complementos;
 	}
 
@@ -54,7 +54,7 @@ public class CopaHelado  implements Precieable, Descriptible, Comparable<CopaHel
 
 	public CopaHelado(IngredienteBase ingredienteBase) {
 		setIngredienteBase(ingredienteBase);
-		setComplemento(new Complemento[MAX_COMPLEMENTOS]);
+		setComplemento(new IngredienteInterfaz[MAX_COMPLEMENTOS]);
 	}
 
 	
@@ -131,7 +131,7 @@ public class CopaHelado  implements Precieable, Descriptible, Comparable<CopaHel
 //			break;
 //		}
 
-		return "Helado de " + getIngredienteBase().getSabor() + " con " + cadena + "PRECIO "
+		return "Copa de helado de " + getIngredienteBase().getSabor() + " con " + cadena + "PRECIO "
 				+ String.format("%.2f", getPrecio());
 	}
 

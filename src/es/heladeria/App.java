@@ -40,7 +40,9 @@ public class App {
 		CopaHelado helado2 = new CopaHelado(base2);
 
 		// añadimos primer complemento
+		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[0]);
 		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[1]);
+		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[2]);
 		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[2]);
 		System.out.println(helado2.toString());
 		
@@ -49,23 +51,15 @@ public class App {
 		IngredienteBase base3 = new IngredienteBase("Nata");
 		CopaHelado helado3 = new CopaHelado(base3);
 		
-		IngredienteInterfaz comple = new IngredienteBase("Chocolate");
-		IngredienteInterfaz comple2 = new Complemento("Chocolate",4);
 		
 		//System.out.println("compleeeeeee2 " + comple2.getDescripcion());
 		IngredienteInterfaz[] komp = new Ingrediente[2];
-		komp[0] = comple;
-		komp[1] = comple2;
-//		helado2.complementos[0] = comple;
-//		helado2.complementos[1] = comple;
+		IngredienteInterfaz comple = new IngredienteBase("Chocolate");
+		IngredienteInterfaz comple2 = new Complemento("Chocolate",4);
 		
-		System.out.println("asdfasdfsdf"  +komp[0].getDescripcion());
-		System.out.println("asdfasdfsdf"  +komp[1].getDescripcion());
-//		
-		
-		System.out.println(comple);		
+//		System.out.println(comple);		
 		helado3.addComplemento(comple);
-		//System.out.println(helado3.toString());
+		System.out.println(helado3.toString());
 
 		System.out.println("-------------------------------------------------");
 
