@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.github.extras.Extra;
 
-public class CopaHelado implements Precieable, Descriptible, Comparable<CopaHelado> {
+public class CopaHelado  implements Precieable, Descriptible, Comparable<CopaHelado> {
 
 	final static int MAX_COMPLEMENTOS = 3;
 	static Ingrediente c0 = new IngredienteBase("Chocolate");
