@@ -1,6 +1,7 @@
 package es.heladeria;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
@@ -94,7 +95,7 @@ public class App {
 		
 		System.out.println("-------------------------------------------------");
 
-		imprimirCuenta(listaHelados);
+		imprimirCuenta(Arrays.asList(helado3,comple));
 		
 		List<IngredienteInterfaz> listaComplementos = new ArrayList<>();
 		listaComplementos.add(comple);
@@ -107,7 +108,6 @@ public class App {
 
 
 
-	
 	private static  <T extends Descriptible & Precieable> void imprimirCuenta(Collection<T> productos) {
 		
 		double sumaTotal = 0;
@@ -115,7 +115,7 @@ public class App {
 		System.out.println("--- Resumen de cuenta ---");
 		
 		for (T t : productos) {
-			System.out.println(t.getDescripcion() + ": " + (t.getPrecio()) + "€");
+			System.out.println(t.getDescripcion() + ": " + String.format("%.2f",t.getPrecio()) + "€");
 			sumaTotal += t.getPrecio();
 		}
 		

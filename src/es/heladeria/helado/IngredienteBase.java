@@ -1,6 +1,6 @@
 package es.heladeria.helado;
 
-public class IngredienteBase extends Ingrediente implements IngredienteInterfaz{
+public class IngredienteBase extends Ingrediente{
 	
 	public static final float PRECIO_DEFECTO = 2f;
 	private String sabor;

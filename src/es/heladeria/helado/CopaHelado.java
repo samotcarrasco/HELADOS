@@ -113,26 +113,8 @@ public class CopaHelado  implements Precieable, Descriptible, Comparable<CopaHel
 			cadena = getComplementos()[0].getDescripcion() + ", " + getComplementos()[1].getDescripcion() + " y "
 					+ getComplementos()[2].getDescripcion();
 
-//		switch (getComplementosL().size()) {
-//		case 0:
-//			cadena = null;
-//			break;
-//		case 1:
-//			cadena = getComplementosL().get(0).getDescripcion();
-//			break;
-//		case 2:
-//			cadena = getComplementosL().get(0).getDescripcion() + " y " + getComplementosL().get(1).getDescripcion();
-//			break;
-//		case 3:
-//			cadena = getComplementosL().get(0).getDescripcion() + ", " + getComplementosL().get(1).getDescripcion() +" y " + getComplementosL().get(1).getDescripcion();
-//			break;
-//			
-//		default:
-//			break;
-//		}
 
-		return "Copa de helado de " + getIngredienteBase().getSabor() + " con " + cadena + "PRECIO "
-				+ String.format("%.2f", getPrecio());
+		return "Copa de helado de " + getIngredienteBase().getSabor() + " con " + cadena;
 	}
 
 	@Override

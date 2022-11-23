@@ -1,6 +1,6 @@
 package es.heladeria.helado;
 
-public class Complemento extends Ingrediente implements IngredienteInterfaz{
+public class Complemento extends Ingrediente{
 	
 	public Complemento(String descripcion, float precio) {
 		super(descripcion,precio);
