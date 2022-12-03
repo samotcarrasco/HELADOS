@@ -39,7 +39,7 @@ public class App {
 		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[0]);
 		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[1]);
 		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[2]);
-		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[2]);
+		helado2.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[3]);
 		System.out.println(helado2.toString());
 
 		System.out.println("-----------------------------------------------");
@@ -47,15 +47,12 @@ public class App {
 			
 		IngredienteBase base3 = new IngredienteBase("Nata");
 		CopaHelado helado3 = new CopaHelado(base3);
-			//Complemento comple = new Complemento("Chocolate", 0);
-		helado3.addComplemento(new IngredienteBase("Chocolate"));
-		helado3.setIngredienteBase(base3);
-		System.out.println("---------------" + helado3.getIngredienteBase().toString());
-		
+		IngredienteInterfaz chocolate = new IngredienteBase("Chocolate");
+		helado3.addComplemento(chocolate);
 		helado3.addComplemento(CopaHelado.CONSTANTE_COMPLEMENTOS[3]);
-		
+		helado3.setIngredienteBase(new IngredienteBase("Nata"));
 		System.out.println(helado3.toString());
-
+		
 		System.out.println("-------------------------------------------------");
 
 		List<CopaHelado> listaHelados = new ArrayList<CopaHelado>();
